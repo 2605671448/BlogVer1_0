@@ -1,0 +1,31 @@
+                    博客部署方案
+=================================== 
+ 1.安装配置jsp运行环境：
+ 
+ 环境配置要求:JDK5.0以上、 Tomcat 5.0以上、Mysql 5.0以上。
+ 以上软件 均可在网上下载：
+jdk 的下载地址：http://java.sun.com/
+tomcat 的下载地址： http://tomcat.apache.org/
+mysql 的下载地址： http://www.mysql.com/
+   
+ 分别安装jdk虚拟机，tomcat服务器和mysql数据库，安装步骤可以参考网上的介绍。
+ 这里就不再啰嗦了。  
+
+2.把项目文件放到tomcat中的 webapp目录下。
+  
+3.向数据库导入中导入数据。
+       
+借助mysql前台工具，建立数据库,向此数据库中导入数据文件.此文件放在doc/db.sql文件。
+配置数据库连接文件,此文件的路径在 WEB-INF/com/blog/tools/db.perperties
+配置里面的user ,password 和url ,分别对应链接数据库的用户名，密码和链接字符串。
+
+4.启动tomcat服务器，测试是否安装完成,如果可以正常访问则说明完成。
+
+5.进入后台项目路径下加上 /admin即可。
+
+
+
+ 
+  
+  
+

@@ -1,0 +1,59 @@
+本博客采用 jsp + servlet + javabeen + mysql 技术,运用了mvc的设计思想做出的简单的博客系统。
+
+
+JSP简介
+　　JSP(Java Server Pages)是由Sun Microsystems公司倡导、许多公司参与一起建立的一种动态网页技术标准。JSP技术有点类似ASP技术，它是在传统的网页HTML文件(*.htm,*.html)中插入Java程序段(Scriptlet)和JSP标记(tag)，从而形成JSP文件(*.jsp)。 
+　　用JSP开发的Web应用是跨平台的，既能在Linux下运行，也能在其他操作系统上运行。
+　　JSP技术使用Java编程语言编写类XML的tags和scriptlets，来封装产生动态网页的处理逻辑。网页还能通过tags和scriptlets访问存在于服务端的资源的应用逻辑。JSP将网页逻辑与网页设计和显示分离，支持可重用的基于组件的设计，使基于Web的应用程序的开发变得迅速和容易。 
+　　Web服务器在遇到访问JSP网页的请求时，首先执行其中的程序段，然后将执行结果连同JSP文件中的HTML代码一起返回给客户。插入的Java程序段可以操作数据库、重新定向网页等，以实现建立动态网页所需要的功能。 
+　　JSP与Java Servlet一样，是在服务器端执行的，通常返回该客户端的就是一个HTML文本，因此客户端只要有浏览器就能浏览。 
+　　JSP的1.0规范的最后版本是1999年9月推出的，12月又推出了1.1规范。目前较新的是JSP1.2规范，JSP2.0规范的征求意见稿也已出台。
+　　JSP页面由HTML代码和嵌入其中的Java代码所组成。服务器在页面被客户端请求以后对这些Java代码进行处理，然后将生成的HTML页面返回给客户端的浏览器。Java Servlet 是JSP的技术基础，而且大型的Web应用程序的开发需要Java Servlet和JSP配合才能完成。JSP具备了Java技术的简单易用，完全的面向对象，具有平台无关性且安全可靠，主要面向因特网的所有特点。 
+　　自JSP推出后，众多大公司都支持JSP技术的服务器，如IBM、Oracle、Bea公司等，所以JSP迅速成为商业应用的服务器端语言。
+JSP 2.0介绍
+　　新的JSP规范版本包括新的用于提升程序员工作效率功能，主要有：
+　　An Expression Language (EL) 
+　　允许开发者创建 Velocity-样式 templates (among other things).更快更简单的创建新标签的方法。
+　　Hello, ${param.visitor} <%-- same as: Hello, <%=request.getParameter("visitor")%> --%>
+　　MVC 模式
+　　为了把表现层presentation从请求处理request processing 和数据存储data storage中分离开来，SUN公司推荐在JSP文件中使用一种“模型-视图-控制器”Model-view-controller 模式。规范的SERVLET或者分离的JSP文件用于处理请求。当请求处理完后，控制权交给一个只作为创建输出作用的JSP页。有几种平台都基于服务于网络层的模-视图-控件 模式(比如Struts 和Spring framework)。
+JSP技术的强势
+　　（1）一次编写，到处运行。在这一点上Java比PHP更出色，除了系统之外，代码不用做任何更改。
+　　（2）系统的多平台支持。基本上可以在所有平台上的任意环境中开发，在任意环境中进行系统部署，在任意环境中扩展。相比ASP/PHP的局限性是显而易见的。 
+　　（3）强大的可伸缩性。从只有一个小的Jar文件就可以运行Servlet/JSP，到由多台服务器进行集群和负载均衡，到多台Application进行事务处理，消息处理，一台服务器到无数台服务器，Java显示了一个巨大的生命力。 
+　　（4）多样化和功能强大的开发工具支持。这一点与ASP很像，Java已经有了许多非常优秀的开发工具，而且许多可以免费得到，并且其中许多已经可以顺利的运行于多种平台之下。
+JSP技术的弱势
+　　（1） 与ASP一样，Java的一些优势正是它致命的问题所在。正是由于为了跨平台的功能，为了极度的伸缩能力，所以极大的增加了产品的复杂性。 
+　　（2） Java的运行速度是用class常驻内存来完成的，所以它在一些情况下所使用的内存比起用户数量来说确实是“最低性能价格比”了。从另一方面，它还需要硬盘空间来储存一系列的.java文件和.class文件，以及对应的版本文件。
+=======================================================================================
+mysql技术
+
+MySQL的概述
+　　MySQL是一个小型关系型数据库管理系统，开发者为瑞典MySQL AB公司。在2008年1月16号被Sun公司收购。而2009年,SUN又被Oracal收购.对于Mysql的前途,没有任何人抱乐观的态度.目前MySQL被广泛地应用在Internet上的中小型网站中。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，许多中小型网站为了降低网站总体拥有成本而选择了MySQL作为网站数据库。MySQL的官方网站的网址是：www.mysql.com
+MySQL的特性
+　　1.使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性 
+　　2.支持AIX、FreeBSD、HP-UX、Linux、Mac OS、Novell Netware、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统 
+　　3.为多种编程语言提供了API。这些编程语言包括C、C++、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。 
+　　4.支持多线程，充分利用CPU资源 
+　　5.优化的SQL查询算法，有效地提高查询速度 
+　　6.既能够作为一个单独的应用程序应用在客户端服务器网络环境中，也能够作为一个库而嵌入到其他的软件中提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift_JIS等都可以用作数据表名和数据列名
+　　7.提供TCP/IP、ODBC和JDBC等多种数据库连接途径 
+　　8.提供用于管理、检查、优化数据库操作的管理工具 
+　　9.可以处理拥有上千万条记录的大型数据库
+MySQL的应用
+　　与其他的大型数据库例如Oracle、DB2、SQL Server等相比，MySQL自有它的不足之处，如规模小、功能有限（MySQL Cluster的功能和效率都相对比较差）等，但是这丝毫也没有减少它受欢迎的程度。对于一般的个人使用者和中小型企业来说，MySQL提供的功能已经绰绰有余，而且由于MySQL是开放源码软件，因此可以大大降低总体拥有成本。
+　　目前Internet上流行的网站构架方式是LAMP（Linux+Apache+MySQL+PHP），即使用Linux作为操作系统，Apache作为Web服务器，MySQL作为数据库，PHP作为服务器端脚本解释器。由于这四个软件都是遵循GPL的开放源码软件，因此使用这种方式不用花一分钱就可以建立起一个稳定、免费的网站系统。
+MySQL管理
+　　可以使用命令行工具管理MySQL数据库（命令mysql 和 mysqladmin)，也可以从MySQL的网站下载图形管理工具MySQL Administrator和MySQL Query Browser。
+　　phpMyAdmin是由php写成的MySQL资料库系统管理程式，让管理者可用Web界面管理MySQL资料库。
+　　phpMyBackupPro也是由PHP写成的，可以透过Web介面创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL 数据库。
+　　另外，还有其他的GUI管理工具，例如早先的mysql-front 以及 ems mysql manager,navicat 等等。
+
+======================================================================
+Tomcat 服务器
+
+Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，目前最新版本是6.0.20(截止到2009-03-20)。
+　　Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5 支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。
+　　Tomcat 很受广大程序员的喜欢，因为它运行时占用的系统资源小，扩展性好，支持负载平衡与邮件服务等开发应用系统常用的功能；而且它还在不断的改进和完善中，任何一个感兴趣的程序员都可以更改它或在其中加入新的功能。
+　　Tomcat 是一个小型的轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache 服务器，可利用它响应对HTML 页面的访问请求。实际上Tomcat 部分是Apache 服务器的扩展，但它是独立运行的，所以当你运行tomcat 时，它实际上作为一个与Apache 独立的进程单独运行的。 
+　　这里的诀窍是，当配置正确时，Apache 为HTML页面服务，而Tomcat 实际上运行JSP 页面和Servlet。另外，Tomcat和IIS、Apache等Web服务器一样，具有处理HTML页面的功能，另外它还是一个Servlet和JSP容器，独立的Servlet容器是Tomcat的默认模式。不过，Tomcat处理静态HTML的能力不如Apache服务器。

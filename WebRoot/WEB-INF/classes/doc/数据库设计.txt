@@ -1,0 +1,98 @@
+1.BlogVer1_0数据名称: BlogVer1
+
+2.规划 ：
+
+用户表[blog]
+文章分类表[sort]
+文章表[article]
+友情链接表[links]
+文章留言表[feedback]
+
+3.具体描述
+
+用户表[blog]
+编号                 id		    int    
+用户名	  username	    VARCHAR (20) 	
+密码                 password	    VARCHAR (20) 	
+博客标题	  subject		VARCHAR (100)  	
+电子邮件	  email		    VARCHAR (50) 
+头像	      image	  	    VARCHAR (100)  
+访问次数	  visitcount    int  
+  
+  
+文章分类表[sort]
+编号  	    id		    int      	 
+名称	        name		VARCHAR (40) 	
+用户编号    	blogid		int     	
+  
+文章表[article]
+ 编号                    id 		int    	PRIMARY KEY,
+ 标题	    title 		VARCHAR (20) 	NOT NULL ,
+内容     	    content		TEXT(2000) 	NULL,
+发布日期   	pubtime		DATETIME	NOT NULL,
+用户编号  	blogid		int     	NOT NULL 
+类别    	    sortid 		int    	NULL 
+  
+友情链接表[links]
+ 编号   	id		    int      	PRIMARY KEY,
+名称	    name		VARCHAR (40) 	NOT NULL,
+网址	    url		    VARCHAR (100) 	NOT NULL,
+用户编号   	blogid		int     	NOT NULL 
+  
+文章留言表[feedback]
+ 编号	    id 		    int    
+昵称	        uname		VARCHAR (20) 	
+IP          IP		    VARCHAR (30) 
+内容            	content		TEXT(2000) 	
+发布日期	    pubtime		DATETIME 	
+文章编号    	articleid	int     	
+			
+4.数据库脚本
+
+create database  BlogVer1;
+ 
+CREATE TABLE `blog` (                    
+          `id` int(11) NOT NULL auto_increment,  
+          `username` varchar(20) NOT NULL,       
+          `password` varchar(20) NOT NULL,       
+          `subject` varchar(100) NOT NULL,       
+          `email` varchar(50) NOT NULL,          
+          `image` varchar(100) default NULL,     
+          `visitcount` int(11) default NULL,     
+          PRIMARY KEY  (`id`)                    
+        ) ENGINE=InnoDB DEFAULT CHARSET=gbk      
+
+ CREATE TABLE `sort` (                    
+          `id` int(11) NOT NULL auto_increment,  
+          `name` varchar(40) NOT NULL,           
+          `blogid` int(11) NOT NULL,             
+          PRIMARY KEY  (`id`)                    
+        ) ENGINE=InnoDB DEFAULT CHARSET=gbk      
+
+CREATE TABLE `article` (                 
+           `id` int(11) NOT NULL auto_increment,  
+           `title` varchar(20) NOT NULL,          
+           `content` mediumtext,                  
+           `pubtime` datetime NOT NULL,           
+           `blogid` int(11) NOT NULL,             
+           `sortid` int(11) default NULL,         
+           PRIMARY KEY  (`id`)                    
+         ) ENGINE=InnoDB DEFAULT CHARSET=gbk      
+         
+CREATE TABLE `feedback` (                
+            `id` int(11) NOT NULL auto_increment,  
+            `uname` varchar(20) NOT NULL,          
+            `content` mediumtext,                  
+            `pubtime` datetime NOT NULL,           
+            `articleid` int(11) NOT NULL,          
+            `ip` varchar(30) default NULL,         
+            PRIMARY KEY  (`id`)                    
+          ) ENGINE=InnoDB DEFAULT CHARSET=gbk      
+
+CREATE TABLE `links` (                   
+          `id` int(11) NOT NULL auto_increment,  
+          `name` varchar(40) NOT NULL,           
+          `url` varchar(100) NOT NULL,           
+          `blogid` int(11) NOT NULL,             
+          PRIMARY KEY  (`id`)                    
+        ) ENGINE=InnoDB DEFAULT CHARSET=gbk      
